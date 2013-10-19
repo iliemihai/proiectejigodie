@@ -1,1 +1,3 @@
 Joc snake in C++
+
+Am folosit un deque pt a retine coordonatele pt fiecare casuta din matricea ocupata de sarpe la un moment dat.Sarpele creste atunci cand mananca,iar mancarea desi apare random nu poate sa apara in zone interzise(peste '0' sau '*').Jocul se termina daca sarpele se loveste de pereti sau de el.
