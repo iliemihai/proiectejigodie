@@ -1,0 +1,1 @@
+g++ example_instagram.cpp -std=c++11 -L. -linslib -lcurl -lcurlpp
