@@ -1,20 +1,3 @@
-/*
- *      Copyright 2018 George Lykuanov (dissfalling@gmail.com)
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
- *
- */
-
 #include "inslib.h"
 
 Session::Session(const std::string &token) {
@@ -85,7 +68,7 @@ string Session::searchAreaRecentMedia(double lat, double lng, int distance) {
         url.append("&");
     }
 
-    url.append("lag=");
+    url.append("lat=");
     url.append(to_string(lat));
 
     url.append("&lng=");
@@ -139,7 +122,7 @@ string Session::getTagInfo(string tagName) {
 
 string Session::getTagRecentMedia(string tagName) {
     string url;
-    string address("/v1/tags/"); address.append(tagName); address.append("/media/recent/?access_token=");
+    string address("/v1/tags/search?q="); address.append(tagName); address.append("&access_token=");
 
     url.append(host);
     url.append(address);

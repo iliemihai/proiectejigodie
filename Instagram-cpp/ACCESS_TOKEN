@@ -1,0 +1,8 @@
+#for gettin the access token call:
+curl -F 'client_id=bff673bf9b6b4fd6b1f94b39fd5b4307' -F 'client_secret=f3843ba847204d38a4d7a9d866448b32' -F 'grant_type=authorization_code' -F 'redirect_uri=https://www.instagram.com/mihaitensor/?hl=en' -F 'code=bbcc4453fbc04456ba322f3ca2391524' https://api.instagram.com/oauth/access_token 
+
+#ACCESS TOKEN
+{"access_token": "2350410138.bff673b.6fb4c0204ff044dda643231a85b71701", "user": {"id": "2350410138", "username": "mihaitensor", "profile_picture": "https://scontent.cdninstagram.com/vp/8928a138ef2f37beb499cd2869da4147/5BEFC2F4/t51.2885-19/s150x150/31278495_350146495389597_3649374866064277504_n.jpg", "full_name": "Mihai Ilie", "bio": "Computer Science student, machine learning", "website": "", "is_business": false}}
+
+#AUTHORIZE ACCESS INSTAGRAM
+https://api.instagram.com/oauth/authorize/?client_id=CLIENTID&redirect_uri=REDIRECT-URI&response_type=code&scope=SCOPE

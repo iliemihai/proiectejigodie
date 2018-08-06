@@ -35,11 +35,11 @@ elseif(${CMAKE_SYSTEM_NAME} STREQUAL Linux)
     set(LIB_INSTALL_PATH /usr/lib/)
 endif()
 
-enable_testing()
-
-if(BUILD_TESTING)
-    add_subdirectory(tests)
-endif()
+#enable_testing()
+#
+#if(BUILD_TESTING)
+#    add_subdirectory(tests)
+#endif()
 
 install(TARGETS ${PROJECT_NAME} DESTINATION ${LIB_INSTALL_PATH})
 find_path(LIB_INCLUDE_PATH string.h)
