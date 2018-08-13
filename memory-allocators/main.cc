@@ -1,4 +1,5 @@
 #include "./linear_allocator/linear_allocator.h"
+#include "./stack_allocator/stack_allocator.h"
 #include "./c_allocator/c_allocator.h"
 #include "./include/allocator.h"
 #include "./include/benchmark.h"
@@ -13,6 +14,7 @@ int main(int argc, char** argv)
 
   Allocator* c_allocator = new CAllocator();
   Allocator* linear_allocator = new LinearAllocator(1e9);
+  Allocator* stack_allocator = new StackAllocator(1e9);
 
   Benchmark bench(1e1);
 
@@ -26,7 +28,12 @@ int main(int argc, char** argv)
   // /bench.MultipleFree(linear_allocator, ALLOC_SIZES, ALLIGNMENTS);
   bench.RandomAllocation(linear_allocator, ALLOC_SIZES, ALLIGNMENTS);
 
+  std::cout << "STACK\n";
+  bench.MultipleAllocation(stack_allocator, ALLOC_SIZES, ALLIGNMENTS);
+  // /bench.MultipleFree(linear_allocator, ALLOC_SIZES, ALLIGNMENTS);
+
   delete c_allocator;
   delete linear_allocator;
+  delete stack_allocator;
   return 0;
 }
