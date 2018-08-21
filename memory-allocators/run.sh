@@ -1,0 +1,1 @@
+>g++ -std=c++11 main.cc include/allocator.h include/allocator.cc include/benchmark.h include/benchmark.cc c_allocator/c_allocator.h c_allocator/c_allocator.cc linear_allocator/linear_allocator.h linear_allocator/linear_allocator.cc stack_allocator/stack_allocator.h stack_allocator/stack_allocator.cc -o main include/utils.h 
